@@ -28,11 +28,11 @@ FROM base as final
 
 COPY --from=builder /venv /venv
 COPY --from=builder /app/dist .
-COPY run.dev.sh .
-RUN chmod +x run.dev.sh
 
 # Activate the virtual environment without root access
 ENV VIRTUAL_ENV=/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 RUN pip install *.whl
+
+CMD uvicorn telebot_template.main:app --host 0.0.0.0 --port $PORT
