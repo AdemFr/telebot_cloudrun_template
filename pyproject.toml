@@ -8,9 +8,10 @@ packages = [{include = "telebot_template"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-python-telegram-bot = "^20.1"
 fastapi = "^0.94.0"
 uvicorn = {extras = ["standard"], version = "^0.21.0"}
+pytelegrambotapi = "^4.10.0"
+google-cloud-run = "^0.7.0"
 
 
 [build-system]

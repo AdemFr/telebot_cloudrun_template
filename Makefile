@@ -26,11 +26,15 @@ drun: build # Build and run server in docker container
 run: # Run server inside poetry shell
 	@TOKEN=${TOKEN} poetry run uvicorn telebot_template.main:app --reload --host 0.0.0.0 --port ${PORT}
 
+.PHONY: run
+run-poll: # Run server inside poetry shell
+	@TOKEN=${TOKEN} poetry run python telebot_template/main.py
+
 .PHONY: deploy
 deploy: push # Build, push and deploy cloud run service
 	@gcloud run deploy ${SERVICE_NAME} \
 		--image ${TAG} \
-		--set-env-vars TOKEN=${TOKEN} \
+		--set-env-vars TOKEN=${TOKEN},PROJECT_ID=${PROJECT_ID},REGION=${REGION},SERVICE_NAME=${SERVICE_NAME} \
 		--allow-unauthenticated \
 		--min-instances=0 \
 		--max-instances=1 \
