@@ -14,6 +14,10 @@ pytelegrambotapi = "^4.10.0"
 google-cloud-run = "^0.7.0"
 
 
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+flake8 = "^6.0.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

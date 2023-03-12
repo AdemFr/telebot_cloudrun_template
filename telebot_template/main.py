@@ -7,9 +7,11 @@ app = FastAPI(docs=None, redoc_url=None)
 WEBHOOK_PATH = "/webhook"
 set_webook(WEBHOOK_PATH)
 
+
 @app.get("/")
 async def root():
     return {"message": _get_public_url()}
+
 
 @app.post(WEBHOOK_PATH)
 def process_webhook(update: dict):
