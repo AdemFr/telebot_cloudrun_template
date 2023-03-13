@@ -20,7 +20,14 @@ push: build # Build and push docker image
 
 .PHONY: drun
 drun: build # Build and run server in docker container
-	@docker run -it -p ${PORT}:${PORT} -e TOKEN=${TOKEN} -e PORT=${PORT} --rm ${TAG}
+	@docker run -it --rm \
+		-p ${PORT}:${PORT} \
+		-e TOKEN=${TOKEN} \
+		-e PORT=${PORT} \
+		-e PROJECT_ID=${PROJECT_ID} \
+		-e REGION=${REGION} \
+		-e SERVICE_NAME=${SERVICE_NAME} \
+		${TAG}
 
 .PHONY: run
 run: # Run server inside poetry shell
