@@ -2,13 +2,12 @@
 
 This repo gives a minimal example for how to run a telegram bot using webhooks on cloud run.
 
-The main reason to do so if cost effectiveness, because one has to only pay for the CPU time that actually handles requests instead of constantly having to run a server which polls for updates. In order to do this, we need to enable scaling to 0 instanced of our app, so that it only wakes up when a request comes in.
+The main reason to do so if cost effectiveness, because one has to only pay for the CPU time that actually handles requests instead of constantly having to run a server which polls for updates. In order to do this, we need to enable scaling to 0 instances of our app, so that it only scales up when requests come in.
 
 ## Setup
 
-1. Create a new google cloud project
-2. Get an API token from the telegram Botfather (https://t.me/BotFather)
-3. Make sure you write your own `.env` file and put it into the root of this directory
+1. Get an API token from the telegram [BotFather](https://t.me/BotFather)
+2. Make sure you write your own `.env` file and put it into the root of this directory
     ```
     # .env
     TOKEN=<TELEGRAM API TOKEN>
@@ -26,7 +25,7 @@ In order to run the bot via simple polling mechanism locally:
 2. Run the polling bot using `make run-polling`
 
 ## Deploy to Cloud Run
-Make sure the [Google Cloud CLI](https://cloud.google.com/sdk/docs/install) is installed.
+Make sure the [Google Cloud CLI](https://cloud.google.com/sdk/docs/install) is installed and that you have access to a google cloud project via the CLI.
 
 If you followed the setup above, you should be able to just run
 ```bash
