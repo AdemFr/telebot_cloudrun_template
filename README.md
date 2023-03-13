@@ -24,6 +24,8 @@ In order to run the bot via simple polling mechanism locally:
 1. Install the package using `poetry install`
 2. Run the polling bot using `make run-polling`
 
+You can also test the functionality this way by just creating a new testing bot as suggested [here](https://core.telegram.org/bots/features#testing-your-bot).
+
 ## Deploy to Cloud Run
 Make sure the [Google Cloud CLI](https://cloud.google.com/sdk/docs/install) is installed and that you have access to a google cloud project via the CLI.
 
