@@ -2,7 +2,7 @@
 
 This repo gives a minimal example for how to run a telegram bot using webhooks on cloud run.
 
-The main reason to do so if cost effectiveness, because one has to only pay for the CPU time that actually handles requests instead of constantly having to run a server which polls for updates. In order to do this, we need to enable scaling to 0 instances of our app, so that it only scales up when requests come in.
+The main reason to do so is cost effectiveness, because one has to only pay for the CPU time that actually handles requests instead of constantly having to run a server which polls for updates. In order to do this, we need to enable scaling to 0 instances of our app, so that it only scales up when requests come in.
 
 ## Setup
 
